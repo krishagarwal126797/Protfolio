@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Krish Agarwal</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+ 
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+  }
+
+  header {
+    background-color: #1e1e1e;
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .navbar li {
+    margin: 0 15px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .navbar a:hover {
+    color: #00ff00;
+  }
+
+  #about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #1e1e1e;
+  }
+
+  .about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-right: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .about-text {
+    max-width: 700px;
+  }
+
+  .about-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00ff00;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+
+  #skills {
+    padding: 50px 20px;
+    background-color: #2e2e2e;
+  }
+  
+  #skills h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .skills-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .column {
+    text-align: center;
+    flex: 1;
+  }
+
+  .column h2 {
+    font-size: 29px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+
+  .skill-item {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .skill-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #00ff00;
+    transition: width 0.3s ease-in-out;
+  }
+
+
+  #projects {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #222121;
+    color: #878585;
+  }
+
+  #projects h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #8c9094;
+  }
+
+  #projects p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #c9c9c9;
+  }
+
+  .project-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .project-card {
+    flex: 1 1 calc(33.33% - 10px); 
+    max-width: calc(50% - 10px);
+    background-color: #111010;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .project-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #81868b;
+  }
+
+  .project-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #b3b1b1;
+    margin-bottom: 20px;
+  }
+
+  .project-card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .project-card button:hover {
+    background-color: #2980b9;
+  }
+
+  
+  #interests {
+    padding: 50px 20px;
+    background-color: #2e2e2e;
+    text-align: center;
+  }
+
+  #interests h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00ff00;
+  }
+
+  #interests p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .interests-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .interest-item {
+    text-align: center;
+    color: #fff;
+  }
+
+ 
+  #contacts {
+    padding: 50px 20px;
+    background-color: #1e1e1e;
+    text-align: center;
+  }
+
+  .social-icons {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #00ff00;
+  }
+
+  footer {
+    background-color: #121212;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .vertical {
+    width: 5px;
+    background-color: white;
+  }
+</style>
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <div class="about-container">
+      <img src="https://cdn.pixabay.com/photo/2022/10/07/11/02/autumn-7504817_1280.jpg" alt="About Me Image" class="about-image">
+      <div class="about-text">
+        <h1>ABOUT ME</h1>
+        <p>My name is Krish Agarwal. I am a passionate developer eager to learn and explore new technologies. I strive to connect my skills with impactful projects to create innovative solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h1>Skills</h1>
+    <div class="skills-container">
+      <div class="column">
+        <h2>Languages</h2>
+        <div class="skill-item">
+          <div class="skill-name">HTML</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">CSS</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">JavaScript</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">C++</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="vertical"></div>
+      <div class="column">
+        <h2>Libraries & Frameworks</h2>
+        <div class="skill-item">
+          <div class="skill-name">ReactJS</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Flutter</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h1>Projects</h1>
+    <p>Explore some of my exciting projects that demonstrate my development expertise and creativity.</p>
+    <div class="project-container">
+      <div class="project-card">
+        <h2>E-Commerce Website</h2>
+        <p>A responsive and dynamic e-commerce website built using HTML, CSS, and JavaScript. It includes product pages, a shopping cart, and a secure checkout system.</p>
+        <button onclick="window.open('https://github.com/krishagarwal126797/ecommerce-web-project', '_blank')">View Project</button>
+      </div>
+      <div class="project-card">
+        <h2>Social Media App</h2>
+        <p>A feature-rich social media app developed using React.js and Firebase. Includes user authentication, real-time chat, and post sharing.</p>
+        <button onclick="window.open('https://github.com/krishagarwal126797/insta-clone', '_blank')">View Project</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="interests" class="section">
+    <h1>Interests</h1>
+    <p>My interests include web development, mobile application development, and exploring AI technologies. I am passionate about creating solutions that improve lives and have a significant impact on the world.</p>
+    <div class="interests-list">
+      <div class="interest-item">
+        <h2>Web Development</h2>
+        <p>Building dynamic and interactive websites to create seamless user experiences.</p>
+      </div>
+      <div class="vertical"></div>
+      <div class="interest-item">
+        <h2>Mobile Apps</h2>
+        <p>Developing mobile applications to empower users and solve real-world problems.</p>
+      </div>
+      <div class="vertical"></div>
+      <div class="interest-item">
+        <h2>AI & Machine Learning</h2>
+        <p>Exploring AI and machine learning to develop innovative solutions that automate tasks and enhance user experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="section">
+    <h1>Contact Me</h1>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/krish-agarwal-6b9197306/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/krishagarwal126797" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:krishagarwal126797@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Krish Agarwal © 2025</p>
+  </footer>
+</body>
+</html>
